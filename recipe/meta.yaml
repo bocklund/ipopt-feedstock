@@ -27,7 +27,8 @@ build:
 
 requirements:
   build:
-    - toolchain
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('m2w64_c') }}  # [win]
     - ampl-mp  # [not win]
     - mumps  # [not win]
     - metis 5.1.*  # [not win]
@@ -51,7 +52,8 @@ test:
     - mytoy.nl
 
   requires:
-    - toolchain
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('m2w64_c') }}  # [win]
 
 about:
   home: https://projects.coin-or.org/Ipopt/
